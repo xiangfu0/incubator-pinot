@@ -125,9 +125,10 @@ public class QueryContext {
   // Trim threshold to use for server combine for SQL GROUP BY
   private int _groupTrimThreshold = InstancePlanMakerImplV2.DEFAULT_GROUPBY_TRIM_THRESHOLD;
   // Number of threads to use for final reduce
-  private int _numThreadsForFinalReduce = InstancePlanMakerImplV2.DEFAULT_NUM_THREADS_FOR_FINAL_REDUCE;
+  private int _numThreadsForServerFinalReduce = InstancePlanMakerImplV2.DEFAULT_NUM_THREADS_FOR_FINAL_REDUCE;
   // Parallel chunk size for final reduce
-  private int _parallelChunkSizeForFinalReduce = InstancePlanMakerImplV2.DEFAULT_PARALLEL_CHUNK_SIZE_FOR_FINAL_REDUCE;
+  private int _parallelChunkSizeForServerFinalReduce =
+      InstancePlanMakerImplV2.DEFAULT_PARALLEL_CHUNK_SIZE_FOR_FINAL_REDUCE;
   // Whether null handling is enabled
   private boolean _nullHandlingEnabled;
   // Whether server returns the final result
@@ -415,20 +416,20 @@ public class QueryContext {
     _groupTrimThreshold = groupTrimThreshold;
   }
 
-  public int getNumThreadsForFinalReduce() {
-    return _numThreadsForFinalReduce;
+  public int getNumThreadsForServerFinalReduce() {
+    return _numThreadsForServerFinalReduce;
   }
 
-  public void setNumThreadsForFinalReduce(int numThreadsForFinalReduce) {
-    _numThreadsForFinalReduce = numThreadsForFinalReduce;
+  public void setNumThreadsForServerFinalReduce(int numThreadsForServerFinalReduce) {
+    _numThreadsForServerFinalReduce = numThreadsForServerFinalReduce;
   }
 
-  public int getParallelChunkSizeForFinalReduce() {
-    return _parallelChunkSizeForFinalReduce;
+  public int getParallelChunkSizeForServerFinalReduce() {
+    return _parallelChunkSizeForServerFinalReduce;
   }
 
-  public void setParallelChunkSizeForFinalReduce(int parallelChunkSizeForFinalReduce) {
-    _parallelChunkSizeForFinalReduce = parallelChunkSizeForFinalReduce;
+  public void setParallelChunkSizeForServerFinalReduce(int parallelChunkSizeForServerFinalReduce) {
+    _parallelChunkSizeForServerFinalReduce = parallelChunkSizeForServerFinalReduce;
   }
 
   public boolean isNullHandlingEnabled() {

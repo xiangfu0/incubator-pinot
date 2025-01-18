@@ -249,16 +249,17 @@ public class QueryOptionsUtils {
   }
 
   @Nullable
-  public static Integer getNumThreadsForFinalReduce(Map<String, String> queryOptions) {
-    String numThreadsForFinalReduceString = queryOptions.get(QueryOptionKey.NUM_THREADS_FOR_FINAL_REDUCE);
-    return checkedParseInt(QueryOptionKey.NUM_THREADS_FOR_FINAL_REDUCE, numThreadsForFinalReduceString, 1);
+  public static Integer getNumThreadsForServerFinalReduce(Map<String, String> queryOptions) {
+    String numThreadsForServerFinalReduceString = queryOptions.get(QueryOptionKey.NUM_THREADS_FOR_SERVER_FINAL_REDUCE);
+    return checkedParseInt(QueryOptionKey.NUM_THREADS_FOR_SERVER_FINAL_REDUCE, numThreadsForServerFinalReduceString, 1);
   }
 
   @Nullable
-  public static Integer getParallelChunkSizeForFinalReduce(Map<String, String> queryOptions) {
-    String parallelChunkSizeForFinalReduceString =
-        queryOptions.get(QueryOptionKey.PARALLEL_CHUNK_SIZE_FOR_FINAL_REDUCE);
-    return checkedParseInt(QueryOptionKey.PARALLEL_CHUNK_SIZE_FOR_FINAL_REDUCE, parallelChunkSizeForFinalReduceString,
+  public static Integer getParallelChunkSizeForServerFinalReduce(Map<String, String> queryOptions) {
+    String parallelChunkSizeForServerFinalReduceString =
+        queryOptions.get(QueryOptionKey.PARALLEL_CHUNK_SIZE_FOR_SERVER_FINAL_REDUCE);
+    return checkedParseInt(QueryOptionKey.PARALLEL_CHUNK_SIZE_FOR_SERVER_FINAL_REDUCE,
+        parallelChunkSizeForServerFinalReduceString,
         1);
   }
 

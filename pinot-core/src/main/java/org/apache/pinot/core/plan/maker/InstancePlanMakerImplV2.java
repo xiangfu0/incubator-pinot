@@ -271,19 +271,20 @@ public class InstancePlanMakerImplV2 implements PlanMaker {
       } else {
         queryContext.setGroupTrimThreshold(_groupByTrimThreshold);
       }
-      // Set numThreadsForFinalReduce
-      Integer numThreadsForFinalReduce = QueryOptionsUtils.getNumThreadsForFinalReduce(queryOptions);
-      if (numThreadsForFinalReduce != null) {
-        queryContext.setNumThreadsForFinalReduce(numThreadsForFinalReduce);
+      // Set numThreadsForServerFinalReduce
+      Integer numThreadsForServerFinalReduce = QueryOptionsUtils.getNumThreadsForServerFinalReduce(queryOptions);
+      if (numThreadsForServerFinalReduce != null) {
+        queryContext.setNumThreadsForServerFinalReduce(numThreadsForServerFinalReduce);
       } else {
-        queryContext.setNumThreadsForFinalReduce(DEFAULT_NUM_THREADS_FOR_FINAL_REDUCE);
+        queryContext.setNumThreadsForServerFinalReduce(DEFAULT_NUM_THREADS_FOR_FINAL_REDUCE);
       }
-      // Set parallelChunkSizeForFinalReduce
-      Integer parallelChunkSizeForFinalReduce = QueryOptionsUtils.getParallelChunkSizeForFinalReduce(queryOptions);
-      if (parallelChunkSizeForFinalReduce != null) {
-        queryContext.setParallelChunkSizeForFinalReduce(parallelChunkSizeForFinalReduce);
+      // Set parallelChunkSizeForServerFinalReduce
+      Integer parallelChunkSizeForServerFinalReduce =
+          QueryOptionsUtils.getParallelChunkSizeForServerFinalReduce(queryOptions);
+      if (parallelChunkSizeForServerFinalReduce != null) {
+        queryContext.setParallelChunkSizeForServerFinalReduce(parallelChunkSizeForServerFinalReduce);
       } else {
-        queryContext.setParallelChunkSizeForFinalReduce(DEFAULT_PARALLEL_CHUNK_SIZE_FOR_FINAL_REDUCE);
+        queryContext.setParallelChunkSizeForServerFinalReduce(DEFAULT_PARALLEL_CHUNK_SIZE_FOR_FINAL_REDUCE);
       }
     }
   }
